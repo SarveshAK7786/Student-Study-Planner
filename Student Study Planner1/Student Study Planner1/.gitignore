@@ -1,30 +1,29 @@
-# Dependency directories
+# Dependencies
 node_modules/
-client/node_modules/
-server/node_modules/
+.pnp
+.pnp.js
 
 # Production build outputs
-client/dist/
+dist/
+build/
 
-# Local databases & logs
-*.log
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Databases and local runtime data
+*.db
+*.sqlite
+*.sqlite3
+database/*.db
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-database/study_planner_local.db
-database/*.db
+*.log
 
-# Environment variables
-.env.local
-.env.*.local
-server/.env.local
-
-# OS Files
+# OS metadata
 .DS_Store
 Thumbs.db
-
-# IDE & Editor files
-.vscode/
-.idea/
-.agents/
-.gemini/
