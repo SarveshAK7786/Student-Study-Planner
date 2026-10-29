@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: smart-study-planner
+    env: node
+    plan: free
+    buildCommand: npm run postinstall
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_TYPE
+        value: mysql
+      - key: DB_HOST
+        value: localhost
+      - key: DB_PORT
+        value: 3306
+      - key: DB_USER
+        value: root
+      - key: DB_PASSWORD
+        value: ""
+      - key: DB_NAME
+        value: smart_study_planner
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: CLAUDE_MODEL
+        value: claude-3-5-sonnet-20241022
+      - key: DAILY_ALERT_HOUR
+        value: "20"
+      - key: EMAIL_SERVICE
+        value: ethereal

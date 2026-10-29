@@ -1,0 +1,30 @@
+# Dependency directories
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Production build outputs
+client/dist/
+
+# Local databases & logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+database/study_planner_local.db
+database/*.db
+
+# Environment variables
+.env.local
+.env.*.local
+server/.env.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE & Editor files
+.vscode/
+.idea/
+.agents/
+.gemini/

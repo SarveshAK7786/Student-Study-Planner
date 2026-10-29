@@ -1,0 +1,19 @@
+﻿Operating Systems: Process Management and Concurrency
+
+Chapter 1: Process vs Thread
+A process is an instance of a computer program that is being executed by one or many threads. It contains the program code and its current activity. Depending on the operating system, a process may be made up of multiple threads of execution that execute instructions concurrently.
+While a computer system is a resource with multiple units, such as a CPU, memory, and I/O devices, processes are the entities that consume these resources.
+
+Key Differences:
+1. Memory Space: Each process has its own address space consisting of text, data, heap, and stack. Threads of the same process share the same heap, code, and global data, but maintain independent call stacks and program counters.
+2. Context Switching Overhead: Switching between two processes requires saving and loading register states, updating page tables and invalidating the translation lookaside buffer (TLB), which is computationally expensive. Thread context switching is lightweight because the virtual address space remains identical.
+3. IPC vs Direct Memory: Inter-process communication (IPC) requires OS mechanisms like pipes, sockets, message queues, or shared memory segments with synchronization primitives. Threads can communicate directly via shared memory variables, though they must avoid race conditions.
+
+Chapter 2: Deadlocks and Coffman Conditions
+A deadlock occurs when a set of concurrent processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process in the set.
+E.G. Coffman identified four necessary and sufficient conditions for a deadlock:
+1. Mutual Exclusion: At least one resource must be held in a non-shareable mode.
+2. Hold and Wait: A process must be currently holding at least one resource and requesting additional resources that are being held by other processes.
+3. No Preemption: Resources cannot be forcibly taken from a process; they can only be released voluntarily by the process holding them.
+4. Circular Wait: A closed chain of processes exists such that each process holds at least one resource needed by the next process in the cycle.
+Breaking any one of these four conditions mathematically guarantees prevention of deadlock.
